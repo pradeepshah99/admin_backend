@@ -36,9 +36,10 @@ database.once('open', (req, res)=>
 })
 
 
+var controller = require('./adminController/controller');
+app.use('/api/admin', controller);
 
-app.listen(host, port, ()=>
-{
-    console.log(`server is running on the port : http://${host}:${port}`);
 
-})
+app.listen(port, host, () => {
+    console.log(`Server is running at http://${host}:${port}`);
+});
