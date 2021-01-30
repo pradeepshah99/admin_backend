@@ -49,9 +49,7 @@ router.post('/register', async(req, res)=>
                     }
                 })
             }
-        }
-
-        
+        }        
     }
 })
 
