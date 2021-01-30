@@ -35,20 +35,16 @@ router.post('/register', async(req, res)=>
             data.mobile = req.body.mobile;
 
             if (!req.body.name || !req.body.email || !req.body.password || !req.body.mobile) {
-                res.json("All field data input is compulsory")
-
+                res.json("All field data input is compulsory");
             }
             else {
                 data.save().then((err, result) => {
                     if (!err) {
                         
                         res.status(200).json({ message: "Data saved successfully", Result: result });
-
-
                     }
                     else {
                         res.status(501).json({ message: " Some Internal Error"});
-
 
                     }
                 })
